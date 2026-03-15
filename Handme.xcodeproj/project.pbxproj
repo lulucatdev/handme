@@ -1,0 +1,379 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01931FA498FD166F2DE2C641 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97663215B88D03D1945A3C5 /* AppDelegate.swift */; };
+		C560BC2A10881D20CE9D0065 /* HandmeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A59949CA3D42D3FD7AE4B6A /* HandmeApp.swift */; };
+		C7035BD9C1D5041F10833447 /* HandmeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 87DD076C6E2E70D151B50330 /* HandmeCore */; };
+		FAAE4A18F738BABFFABD72FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3901D98E237AC538AEEFF155 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1A899AAE498E0ED7FAF5D5CD /* Handme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Handme.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3901D98E237AC538AEEFF155 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		61CD0DFB9BA20FF504DCD565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8A59949CA3D42D3FD7AE4B6A /* HandmeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandmeApp.swift; sourceTree = "<group>"; };
+		8D257C122BD8AFD312CACB92 /* handme */ = {isa = PBXFileReference; lastKnownFileType = folder; name = handme; path = .; sourceTree = SOURCE_ROOT; };
+		B97663215B88D03D1945A3C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5701ADBD599BE7FA50787BE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7035BD9C1D5041F10833447 /* HandmeCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7BC29F2C7857EFAF4C2922C6 = {
+			isa = PBXGroup;
+			children = (
+				8FE452AB65DBEA7699C3D94F /* Handme */,
+				86CC6B121F8529866C60F958 /* Packages */,
+				B1B1D7A8065049F75F71A618 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		86CC6B121F8529866C60F958 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				8D257C122BD8AFD312CACB92 /* handme */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		8FE452AB65DBEA7699C3D94F /* Handme */ = {
+			isa = PBXGroup;
+			children = (
+				3901D98E237AC538AEEFF155 /* Assets.xcassets */,
+				61CD0DFB9BA20FF504DCD565 /* Info.plist */,
+				E2263AAACE56EC2281742E60 /* App */,
+			);
+			path = Handme;
+			sourceTree = "<group>";
+		};
+		B1B1D7A8065049F75F71A618 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A899AAE498E0ED7FAF5D5CD /* Handme.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2263AAACE56EC2281742E60 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B97663215B88D03D1945A3C5 /* AppDelegate.swift */,
+				8A59949CA3D42D3FD7AE4B6A /* HandmeApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3ACD48CDB5A3DC0BE76BFF2 /* Handme */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFFC469DF1DAB5AC60BA95EE /* Build configuration list for PBXNativeTarget "Handme" */;
+			buildPhases = (
+				48DEC98CA8E5A0712451E3AE /* Sources */,
+				8875D8EBC0969867513C53D2 /* Resources */,
+				5701ADBD599BE7FA50787BE7 /* Frameworks */,
+				EC66CD2DB159C8F2455CE05C /* Copy CLI binary to Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Handme;
+			packageProductDependencies = (
+				87DD076C6E2E70D151B50330 /* HandmeCore */,
+			);
+			productName = Handme;
+			productReference = 1A899AAE498E0ED7FAF5D5CD /* Handme.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		129B5B6AD2743BC6B61E6BD9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = DE3525444132143E9A478812 /* Build configuration list for PBXProject "Handme" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 7BC29F2C7857EFAF4C2922C6;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3B71CC9AB6CDF55B9E822A00 /* XCLocalSwiftPackageReference "." */,
+			);
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3ACD48CDB5A3DC0BE76BFF2 /* Handme */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8875D8EBC0969867513C53D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAAE4A18F738BABFFABD72FC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EC66CD2DB159C8F2455CE05C /* Copy CLI binary to Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy CLI binary to Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${PROJECT_DIR}\"\nswift build -c release --product handme 2>/dev/null || swift build --product handme\nCLI_BIN=$(swift build --show-bin-path --product handme 2>/dev/null || echo \".build/debug\")/handme\nif [ ! -f \"$CLI_BIN\" ]; then\n  CLI_BIN=\".build/release/handme\"\nfi\nif [ -f \"$CLI_BIN\" ]; then\n  mkdir -p \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\"\n  cp \"$CLI_BIN\" \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/handme\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48DEC98CA8E5A0712451E3AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01931FA498FD166F2DE2C641 /* AppDelegate.swift in Sources */,
+				C560BC2A10881D20CE9D0065 /* HandmeApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1A14394764B2929BC3F69837 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4E5281485B1A1ACFE267FCF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		6F1D5C3B02EEAD08170794B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = Handme/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.handme.app;
+				PRODUCT_NAME = Handme;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F2F9904C65313F97C17D116D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = Handme/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.handme.app;
+				PRODUCT_NAME = Handme;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFFC469DF1DAB5AC60BA95EE /* Build configuration list for PBXNativeTarget "Handme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F1D5C3B02EEAD08170794B5 /* Debug */,
+				F2F9904C65313F97C17D116D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DE3525444132143E9A478812 /* Build configuration list for PBXProject "Handme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A14394764B2929BC3F69837 /* Debug */,
+				4E5281485B1A1ACFE267FCF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		3B71CC9AB6CDF55B9E822A00 /* XCLocalSwiftPackageReference "." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = .;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		87DD076C6E2E70D151B50330 /* HandmeCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HandmeCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 129B5B6AD2743BC6B61E6BD9 /* Project object */;
+}

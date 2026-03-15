@@ -1,0 +1,43 @@
+name: Handme
+options:
+  bundleIdPrefix: com.handme
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+
+packages:
+  HandmeCore:
+    path: .
+
+targets:
+  Handme:
+    type: application
+    platform: macOS
+    sources:
+      - path: Handme
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.handme.app
+        PRODUCT_NAME: Handme
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        INFOPLIST_FILE: Handme/Info.plist
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
+        CODE_SIGN_IDENTITY: "-"
+    dependencies:
+      - package: HandmeCore
+        product: HandmeCore
+    postBuildScripts:
+      - name: "Copy CLI binary to Resources"
+        script: |
+          cd "${PROJECT_DIR}"
+          swift build -c release --product handme 2>/dev/null || swift build --product handme
+          CLI_BIN=$(swift build --show-bin-path --product handme 2>/dev/null || echo ".build/debug")/handme
+          if [ ! -f "$CLI_BIN" ]; then
+            CLI_BIN=".build/release/handme"
+          fi
+          if [ -f "$CLI_BIN" ]; then
+            mkdir -p "${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
+            cp "$CLI_BIN" "${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/handme"
+          fi
+        basedOnDependencyAnalysis: false
