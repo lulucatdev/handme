@@ -6,6 +6,7 @@ struct ContentView: View {
     @StateObject private var viewModel = InboxViewModel()
     @State private var showClearConfirmation = false
     @State private var quickLookResponder = QuickLookResponder()
+    @Environment(\.openWindow) private var openWindow
 
     var body: some View {
         Group {
@@ -20,7 +21,10 @@ struct ContentView: View {
         .onAppear {
             viewModel.setup()
             viewModel.markAsRead()
-            (NSApplication.shared.delegate as? AppDelegate)?.viewModel = viewModel
+            if let appDelegate = NSApplication.shared.delegate as? AppDelegate {
+                appDelegate.viewModel = viewModel
+                appDelegate.openMainWindow = { [openWindow] in openWindow(id: "main") }
+            }
         }
         .onDisappear {
             viewModel.tearDown()

@@ -14,6 +14,7 @@ struct HandmeApp: App {
             ContentView()
         }
         .defaultSize(width: 480, height: 600)
+        .defaultPosition(.center)
         .commands {
             CommandGroup(after: .pasteboard) {
                 Button("复制路径") {

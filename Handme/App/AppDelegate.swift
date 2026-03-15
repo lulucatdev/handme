@@ -39,14 +39,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         reopenMainWindow()
     }
 
+    /// Stored by ContentView so we can reopen the SwiftUI Window from outside the view hierarchy.
+    var openMainWindow: (() -> Void)?
+
     func reopenMainWindow() {
         NSApplication.shared.activate(ignoringOtherApps: true)
+        // First try to find and show an existing window
         for window in NSApplication.shared.windows {
             if window.frameAutosaveName.contains("main") || window.title == "Handme" {
+                if let screen = NSScreen.main, !screen.visibleFrame.intersects(window.frame) {
+                    window.center()
+                }
                 window.makeKeyAndOrderFront(nil)
                 return
             }
         }
+        // Window was destroyed by SwiftUI — recreate via OpenWindowAction
+        openMainWindow?()
     }
 
     private func observeNewItems() {
