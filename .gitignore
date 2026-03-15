@@ -1,3 +1,8 @@
+# Swift
+.build/
+*.o
+*.d
+
 # Rust
 target/
 
