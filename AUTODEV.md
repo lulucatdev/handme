@@ -154,4 +154,10 @@ App build 在涉及 Xcode 项目文件变更时跑。纯 Package 改动只需 `s
 
 ## Metrics Snapshots
 
-（随项目推进填充）
+### v0.1 — Initial release
+- Date: 2026-03-15
+- Tests: 10 pass, 0 fail
+- Warnings: 0
+- Source files: 20 (.swift)
+- Dependencies: 2 (GRDB.swift 7.10.0, swift-argument-parser 1.7.0)
+- Commits: 16 (implementation)
