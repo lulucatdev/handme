@@ -1,7 +1,14 @@
 import AppKit
+import Combine
 
+@MainActor
 class AppDelegate: NSObject, NSApplicationDelegate {
     private var statusItem: NSStatusItem!
+    private var cancellable: AnyCancellable?
+
+    var viewModel: InboxViewModel? {
+        didSet { observeNewItems() }
+    }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         setupStatusItem()
@@ -27,6 +34,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc private func statusItemClicked() {
+        viewModel?.markAsRead()
+        updateBadge(false)
         reopenMainWindow()
     }
 
@@ -37,6 +46,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 window.makeKeyAndOrderFront(nil)
                 return
             }
+        }
+    }
+
+    private func observeNewItems() {
+        cancellable?.cancel()
+        guard let viewModel else { return }
+        cancellable = viewModel.$hasNewItems
+            .receive(on: RunLoop.main)
+            .sink { [weak self] hasNew in
+                self?.updateBadge(hasNew)
+            }
+    }
+
+    private func updateBadge(_ hasNew: Bool) {
+        guard let button = statusItem?.button else { return }
+        if hasNew {
+            let baseImage = NSImage(named: "TrayIcon")
+            let badgedImage = NSImage(size: NSSize(width: 18, height: 18), flipped: false) { rect in
+                baseImage?.draw(in: rect)
+                NSColor.systemRed.setFill()
+                let dotSize: CGFloat = 5
+                let dotRect = NSRect(x: rect.maxX - dotSize - 1, y: rect.maxY - dotSize - 1, width: dotSize, height: dotSize)
+                NSBezierPath(ovalIn: dotRect).fill()
+                return true
+            }
+            badgedImage.isTemplate = false
+            button.image = badgedImage
+        } else {
+            button.image = NSImage(named: "TrayIcon")
+            button.image?.isTemplate = true
         }
     }
 }

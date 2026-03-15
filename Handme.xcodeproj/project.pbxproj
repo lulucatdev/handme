@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01931FA498FD166F2DE2C641 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97663215B88D03D1945A3C5 /* AppDelegate.swift */; };
+		0C427427C55CAB2E87566DE9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C348D202AD54E66E60CAE7 /* SettingsView.swift */; };
 		24A6C66A27AEDBA192AE29B7 /* FileOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F259FC29BFB15A026318BFD7 /* FileOperations.swift */; };
 		4CFC3E373E48AE8E5A0C3C31 /* CLIInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89B909A5A48B9680245D365 /* CLIInstaller.swift */; };
 		56CFB90B0A020247C99B9ECD /* RelativeTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207EF24F371B860DCD90295B /* RelativeTimeFormatter.swift */; };
@@ -18,6 +19,7 @@
 		C560BC2A10881D20CE9D0065 /* HandmeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A59949CA3D42D3FD7AE4B6A /* HandmeApp.swift */; };
 		C7035BD9C1D5041F10833447 /* HandmeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 87DD076C6E2E70D151B50330 /* HandmeCore */; };
 		DB5CD522CE6FBAFE4F1EB8A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9EFA69896CB1178750009 /* ContentView.swift */; };
+		F534D44DA67A3845E7765B0A /* QuickLookBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3E1815B02D9689EEA02B38 /* QuickLookBridge.swift */; };
 		FAAE4A18F738BABFFABD72FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3901D98E237AC538AEEFF155 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		B5D9EFA69896CB1178750009 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B89B909A5A48B9680245D365 /* CLIInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLIInstaller.swift; sourceTree = "<group>"; };
 		B97663215B88D03D1945A3C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CC3E1815B02D9689EEA02B38 /* QuickLookBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookBridge.swift; sourceTree = "<group>"; };
+		E8C348D202AD54E66E60CAE7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EAB58837ACE720353FCE4827 /* InboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewModel.swift; sourceTree = "<group>"; };
 		F259FC29BFB15A026318BFD7 /* FileOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileOperations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +68,7 @@
 				B89B909A5A48B9680245D365 /* CLIInstaller.swift */,
 				F259FC29BFB15A026318BFD7 /* FileOperations.swift */,
 				771C217A8AFFF838D3D2B7DD /* PathFormatter.swift */,
+				CC3E1815B02D9689EEA02B38 /* QuickLookBridge.swift */,
 				207EF24F371B860DCD90295B /* RelativeTimeFormatter.swift */,
 			);
 			path = Utilities;
@@ -122,6 +127,7 @@
 				B5D9EFA69896CB1178750009 /* ContentView.swift */,
 				638EF814DC9082C9642D4F1D /* EmptyStateView.swift */,
 				7A47EF5DEC55910937558B74 /* FileRowView.swift */,
+				E8C348D202AD54E66E60CAE7 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,7 +234,9 @@
 				C560BC2A10881D20CE9D0065 /* HandmeApp.swift in Sources */,
 				6990B286F957A7EE778B8104 /* InboxViewModel.swift in Sources */,
 				94138FD17EFEA9B7C0C10CBE /* PathFormatter.swift in Sources */,
+				F534D44DA67A3845E7765B0A /* QuickLookBridge.swift in Sources */,
 				56CFB90B0A020247C99B9ECD /* RelativeTimeFormatter.swift in Sources */,
+				0C427427C55CAB2E87566DE9 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
