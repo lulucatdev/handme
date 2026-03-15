@@ -107,12 +107,13 @@ struct ContentView: View {
 
             Divider()
 
-            List(viewModel.filteredItems, selection: $viewModel.selection) { item in
-                FileRowView(item: item)
-                    .overlay(DoubleClickView { FileOperations.open(item) })
-                    .contextMenu { contextMenu(for: item) }
-                    .draggable(FileItemProvider(filePath: item.filePath))
-            }
+            AppKitFileListView(
+                items: viewModel.filteredItems,
+                selection: $viewModel.selection,
+                onDoubleClick: { FileOperations.open($0) },
+                onDelete: { viewModel.removeSelected() },
+                contextMenuProvider: { _ in NSMenu() }
+            )
 
             Divider()
 
@@ -127,23 +128,6 @@ struct ContentView: View {
         }
     }
 
-    @ViewBuilder
-    private func contextMenu(for item: InboxItem) -> some View {
-        let targets = viewModel.selection.contains(item.id) ? viewModel.selectedItems : [item]
-        Button("打开") { FileOperations.open(item) }
-        Button("在 Finder 中显示") { FileOperations.revealInFinder(targets) }
-        Divider()
-        Button("复制") { FileOperations.copyFiles(targets) }
-        Button("复制路径") { FileOperations.copyPaths(targets) }
-        Divider()
-        Button("移除") {
-            if !viewModel.selection.contains(item.id) {
-                viewModel.selection = [item.id]
-            }
-            viewModel.removeSelected()
-        }
-    }
-
     private func handleDrop(_ providers: [NSItemProvider]) {
         for provider in providers {
             provider.loadItem(forTypeIdentifier: UTType.fileURL.identifier, options: nil) { item, _ in
@@ -155,38 +139,6 @@ struct ContentView: View {
     }
 }
 
-struct FileItemProvider: Transferable {
-    let filePath: String
-
-    static var transferRepresentation: some TransferRepresentation {
-        FileRepresentation(exportedContentType: .fileURL) { item in
-            SentTransferredFile(URL(fileURLWithPath: item.filePath))
-        }
-    }
-}
-
-private class DoubleClickNSView: NSView {
-    var onDoubleClick: (() -> Void)?
-
-    override func mouseDown(with event: NSEvent) {
-        super.mouseDown(with: event)
-        if event.clickCount == 2 { onDoubleClick?() }
-    }
-}
-
-private struct DoubleClickView: NSViewRepresentable {
-    let action: () -> Void
-
-    func makeNSView(context: Context) -> DoubleClickNSView {
-        let view = DoubleClickNSView()
-        view.onDoubleClick = action
-        return view
-    }
-
-    func updateNSView(_ nsView: DoubleClickNSView, context: Context) {
-        nsView.onDoubleClick = action
-    }
-}
 
 extension Notification.Name {
     static let handmeCopyFiles = Notification.Name("handmeCopyFiles")

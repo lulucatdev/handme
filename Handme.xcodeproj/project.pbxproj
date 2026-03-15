@@ -15,6 +15,7 @@
 		6990B286F957A7EE778B8104 /* InboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB58837ACE720353FCE4827 /* InboxViewModel.swift */; };
 		8569ACB1A9C216E3DF31EF10 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638EF814DC9082C9642D4F1D /* EmptyStateView.swift */; };
 		94138FD17EFEA9B7C0C10CBE /* PathFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C217A8AFFF838D3D2B7DD /* PathFormatter.swift */; };
+		9B50E15BCC255E34181CC5BF /* AppKitFileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EA36A2BAED854320A850C3 /* AppKitFileListView.swift */; };
 		9DFA9BA25BD1DB20FE4AEFD4 /* FileRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A47EF5DEC55910937558B74 /* FileRowView.swift */; };
 		C560BC2A10881D20CE9D0065 /* HandmeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A59949CA3D42D3FD7AE4B6A /* HandmeApp.swift */; };
 		C7035BD9C1D5041F10833447 /* HandmeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 87DD076C6E2E70D151B50330 /* HandmeCore */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		1A899AAE498E0ED7FAF5D5CD /* Handme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Handme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		207EF24F371B860DCD90295B /* RelativeTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeTimeFormatter.swift; sourceTree = "<group>"; };
+		30EA36A2BAED854320A850C3 /* AppKitFileListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKitFileListView.swift; sourceTree = "<group>"; };
 		3901D98E237AC538AEEFF155 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61CD0DFB9BA20FF504DCD565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		638EF814DC9082C9642D4F1D /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		FE614CACA072BCF4EAC2E725 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				30EA36A2BAED854320A850C3 /* AppKitFileListView.swift */,
 				B5D9EFA69896CB1178750009 /* ContentView.swift */,
 				638EF814DC9082C9642D4F1D /* EmptyStateView.swift */,
 				7A47EF5DEC55910937558B74 /* FileRowView.swift */,
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01931FA498FD166F2DE2C641 /* AppDelegate.swift in Sources */,
+				9B50E15BCC255E34181CC5BF /* AppKitFileListView.swift in Sources */,
 				4CFC3E373E48AE8E5A0C3C31 /* CLIInstaller.swift in Sources */,
 				DB5CD522CE6FBAFE4F1EB8A5 /* ContentView.swift in Sources */,
 				8569ACB1A9C216E3DF31EF10 /* EmptyStateView.swift in Sources */,
