@@ -35,8 +35,7 @@ struct HandmeApp: App {
         }
 
         Settings {
-            Text("Settings placeholder")
-                .frame(width: 300, height: 200)
+            SettingsView()
         }
     }
 }
