@@ -5,6 +5,7 @@ import UniformTypeIdentifiers
 struct ContentView: View {
     @StateObject private var viewModel = InboxViewModel()
     @State private var showClearConfirmation = false
+    @State private var quickLookResponder = QuickLookResponder()
 
     var body: some View {
         Group {
@@ -15,9 +16,11 @@ struct ContentView: View {
             }
         }
         .frame(minWidth: 320, minHeight: 400)
+        .background(QuickLookBridgeView(responder: quickLookResponder).frame(width: 0, height: 0))
         .onAppear {
             viewModel.setup()
             viewModel.markAsRead()
+            (NSApplication.shared.delegate as? AppDelegate)?.viewModel = viewModel
         }
         .onDisappear {
             viewModel.tearDown()
@@ -48,6 +51,9 @@ struct ContentView: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: .handmeRevealInFinder)) { _ in
             FileOperations.revealInFinder(viewModel.selectedItems)
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .handmeQuickLook)) { _ in
+            quickLookResponder.togglePreview(for: viewModel.selectedItems)
         }
     }
 
