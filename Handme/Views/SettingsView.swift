@@ -18,9 +18,15 @@ struct SettingsView: View {
                     LabeledContent("状态", value: "已安装")
                     LabeledContent("路径", value: path)
                     Button("卸载命令行工具") {
-                        if CLIInstaller.uninstall() {
+                        switch CLIInstaller.uninstall() {
+                        case .success:
                             cliStatus = .notInstalled
                             actionResult = "✓ 已卸载"
+                        case .failure(let err):
+                            actionResult = "✗ \(err)"
+                        case .notFound:
+                            cliStatus = .notInstalled
+                            actionResult = "✓ 未找到已安装的命令行工具"
                         }
                     }
                 case .stale(let path):
@@ -40,11 +46,21 @@ struct SettingsView: View {
             }
 
             Section("关于") {
+                HStack {
+                    Spacer()
+                    Image(nsImage: NSApplication.shared.applicationIconImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 96, height: 96)
+                        .opacity(0.4)
+                    Spacer()
+                }
+                .listRowBackground(Color.clear)
+
                 LabeledContent("版本", value: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0.1.0")
             }
         }
         .formStyle(.grouped)
-        .frame(width: 400, height: 300)
     }
 
     private func doInstall() {

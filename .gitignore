@@ -1,5 +1,7 @@
 # Swift
 .build/
+build/
+DerivedData/
 *.o
 *.d
 

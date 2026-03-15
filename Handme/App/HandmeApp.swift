@@ -13,7 +13,7 @@ struct HandmeApp: App {
         Window("Handme", id: "main") {
             ContentView()
         }
-        .defaultSize(width: 480, height: 600)
+        .defaultSize(width: 650, height: 600)
         .defaultPosition(.center)
         .commands {
             CommandGroup(after: .pasteboard) {

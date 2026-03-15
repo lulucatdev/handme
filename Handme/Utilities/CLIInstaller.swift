@@ -12,6 +12,12 @@ enum CLIInstaller {
         case failure(String)
     }
 
+    enum UninstallResult {
+        case success
+        case failure(String)
+        case notFound
+    }
+
     private static let searchPaths = [
         "/usr/local/bin/handme",
         "\(FileManager.default.homeDirectoryForCurrentUser.path)/.local/bin/handme"
@@ -51,20 +57,23 @@ enum CLIInstaller {
         return .failure("无法创建符号链接。请手动运行：ln -s \"\(bundleCLI)\" /usr/local/bin/handme")
     }
 
-    static func uninstall() -> Bool {
+    static func uninstall() -> UninstallResult {
         for path in searchPaths {
-            guard FileManager.default.fileExists(atPath: path),
-                  (try? FileManager.default.destinationOfSymbolicLink(atPath: path)) != nil else { continue }
-            try? FileManager.default.removeItem(atPath: path)
-            return true
+            guard FileManager.default.fileExists(atPath: path) else { continue }
+            do {
+                try FileManager.default.removeItem(atPath: path)
+                return .success
+            } catch {
+                return .failure("无法删除 \(path)。请手动运行：rm \(path)")
+            }
         }
-        return false
+        return .notFound
     }
 
     private static func canCreateSymlink(at destination: String, from source: String) -> Bool {
         if FileManager.default.fileExists(atPath: destination) {
-            guard (try? FileManager.default.destinationOfSymbolicLink(atPath: destination)) != nil else { return false }
-            try? FileManager.default.removeItem(atPath: destination)
+            do { try FileManager.default.removeItem(atPath: destination) }
+            catch { return false }
         }
         do {
             try FileManager.default.createSymbolicLink(atPath: destination, withDestinationPath: source)

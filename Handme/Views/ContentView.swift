@@ -2,21 +2,36 @@ import SwiftUI
 import HandmeCore
 import UniformTypeIdentifiers
 
+enum SidebarItem: Hashable {
+    case files
+    case settings
+}
+
 struct ContentView: View {
     @StateObject private var viewModel = InboxViewModel()
+    @State private var sidebarSelection: SidebarItem? = .files
     @State private var showClearConfirmation = false
     @State private var quickLookResponder = QuickLookResponder()
     @Environment(\.openWindow) private var openWindow
 
     var body: some View {
-        Group {
-            if viewModel.items.isEmpty && viewModel.filterText.isEmpty {
-                EmptyStateView()
-            } else {
-                fileListView
+        NavigationSplitView {
+            List(selection: $sidebarSelection) {
+                Label("全部文件", systemImage: "tray.full")
+                    .tag(SidebarItem.files)
+                Label("设置", systemImage: "gear")
+                    .tag(SidebarItem.settings)
+            }
+            .navigationSplitViewColumnWidth(min: 140, ideal: 170, max: 240)
+        } detail: {
+            switch sidebarSelection {
+            case .files, .none:
+                filesDetail
+            case .settings:
+                SettingsView()
+                    .navigationTitle("设置")
             }
         }
-        .frame(minWidth: 320, minHeight: 400)
         .background(QuickLookBridgeView(responder: quickLookResponder).frame(width: 0, height: 0))
         .onAppear {
             viewModel.setup()
@@ -40,10 +55,12 @@ struct ContentView: View {
             Text("确定要清空收件箱中的 \(viewModel.items.count) 个文件吗？\n这不会删除原文件。")
         }
         .onKeyPress(.return) {
+            guard sidebarSelection == .files else { return .ignored }
             if let first = viewModel.selectedItems.first { FileOperations.open(first) }
             return .handled
         }
         .onKeyPress(.delete) {
+            guard sidebarSelection == .files else { return .ignored }
             viewModel.removeSelected()
             return .handled
         }
@@ -59,6 +76,18 @@ struct ContentView: View {
         .onReceive(NotificationCenter.default.publisher(for: .handmeQuickLook)) { _ in
             quickLookResponder.togglePreview(for: viewModel.selectedItems)
         }
+    }
+
+    private var filesDetail: some View {
+        Group {
+            if viewModel.items.isEmpty && viewModel.filterText.isEmpty {
+                EmptyStateView()
+            } else {
+                fileListView
+            }
+        }
+        .frame(minWidth: 320, minHeight: 400)
+        .navigationTitle("全部文件")
     }
 
     private var fileListView: some View {
@@ -80,6 +109,7 @@ struct ContentView: View {
 
             List(viewModel.filteredItems, selection: $viewModel.selection) { item in
                 FileRowView(item: item)
+                    .overlay(DoubleClickView { FileOperations.open(item) })
                     .contextMenu { contextMenu(for: item) }
                     .draggable(URL(fileURLWithPath: item.filePath))
             }
@@ -122,6 +152,29 @@ struct ContentView: View {
                 Task { @MainActor in viewModel.addPaths([url.path]) }
             }
         }
+    }
+}
+
+private class DoubleClickNSView: NSView {
+    var onDoubleClick: (() -> Void)?
+
+    override func mouseDown(with event: NSEvent) {
+        super.mouseDown(with: event)
+        if event.clickCount == 2 { onDoubleClick?() }
+    }
+}
+
+private struct DoubleClickView: NSViewRepresentable {
+    let action: () -> Void
+
+    func makeNSView(context: Context) -> DoubleClickNSView {
+        let view = DoubleClickNSView()
+        view.onDoubleClick = action
+        return view
+    }
+
+    func updateNSView(_ nsView: DoubleClickNSView, context: Context) {
+        nsView.onDoubleClick = action
     }
 }
 
