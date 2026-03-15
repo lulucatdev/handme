@@ -111,7 +111,7 @@ struct ContentView: View {
                 FileRowView(item: item)
                     .overlay(DoubleClickView { FileOperations.open(item) })
                     .contextMenu { contextMenu(for: item) }
-                    .draggable(URL(fileURLWithPath: item.filePath))
+                    .draggable(FileItemProvider(filePath: item.filePath))
             }
 
             Divider()
@@ -151,6 +151,16 @@ struct ContentView: View {
                       let url = URL(dataRepresentation: data, relativeTo: nil) else { return }
                 Task { @MainActor in viewModel.addPaths([url.path]) }
             }
+        }
+    }
+}
+
+struct FileItemProvider: Transferable {
+    let filePath: String
+
+    static var transferRepresentation: some TransferRepresentation {
+        FileRepresentation(exportedContentType: .fileURL) { item in
+            SentTransferredFile(URL(fileURLWithPath: item.filePath))
         }
     }
 }
