@@ -8,18 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		01931FA498FD166F2DE2C641 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97663215B88D03D1945A3C5 /* AppDelegate.swift */; };
+		24A6C66A27AEDBA192AE29B7 /* FileOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F259FC29BFB15A026318BFD7 /* FileOperations.swift */; };
+		4CFC3E373E48AE8E5A0C3C31 /* CLIInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89B909A5A48B9680245D365 /* CLIInstaller.swift */; };
+		56CFB90B0A020247C99B9ECD /* RelativeTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207EF24F371B860DCD90295B /* RelativeTimeFormatter.swift */; };
+		6990B286F957A7EE778B8104 /* InboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB58837ACE720353FCE4827 /* InboxViewModel.swift */; };
+		8569ACB1A9C216E3DF31EF10 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638EF814DC9082C9642D4F1D /* EmptyStateView.swift */; };
+		94138FD17EFEA9B7C0C10CBE /* PathFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C217A8AFFF838D3D2B7DD /* PathFormatter.swift */; };
+		9DFA9BA25BD1DB20FE4AEFD4 /* FileRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A47EF5DEC55910937558B74 /* FileRowView.swift */; };
 		C560BC2A10881D20CE9D0065 /* HandmeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A59949CA3D42D3FD7AE4B6A /* HandmeApp.swift */; };
 		C7035BD9C1D5041F10833447 /* HandmeCore in Frameworks */ = {isa = PBXBuildFile; productRef = 87DD076C6E2E70D151B50330 /* HandmeCore */; };
+		DB5CD522CE6FBAFE4F1EB8A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9EFA69896CB1178750009 /* ContentView.swift */; };
 		FAAE4A18F738BABFFABD72FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3901D98E237AC538AEEFF155 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A899AAE498E0ED7FAF5D5CD /* Handme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Handme.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		207EF24F371B860DCD90295B /* RelativeTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeTimeFormatter.swift; sourceTree = "<group>"; };
 		3901D98E237AC538AEEFF155 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61CD0DFB9BA20FF504DCD565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		638EF814DC9082C9642D4F1D /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		771C217A8AFFF838D3D2B7DD /* PathFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathFormatter.swift; sourceTree = "<group>"; };
+		7A47EF5DEC55910937558B74 /* FileRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRowView.swift; sourceTree = "<group>"; };
 		8A59949CA3D42D3FD7AE4B6A /* HandmeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandmeApp.swift; sourceTree = "<group>"; };
 		8D257C122BD8AFD312CACB92 /* handme */ = {isa = PBXFileReference; lastKnownFileType = folder; name = handme; path = .; sourceTree = SOURCE_ROOT; };
+		B5D9EFA69896CB1178750009 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B89B909A5A48B9680245D365 /* CLIInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLIInstaller.swift; sourceTree = "<group>"; };
 		B97663215B88D03D1945A3C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EAB58837ACE720353FCE4827 /* InboxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewModel.swift; sourceTree = "<group>"; };
+		F259FC29BFB15A026318BFD7 /* FileOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileOperations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +50,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D63D135927FAC631E1037DC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EAB58837ACE720353FCE4827 /* InboxViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3EC12707C866396D6E124F7A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B89B909A5A48B9680245D365 /* CLIInstaller.swift */,
+				F259FC29BFB15A026318BFD7 /* FileOperations.swift */,
+				771C217A8AFFF838D3D2B7DD /* PathFormatter.swift */,
+				207EF24F371B860DCD90295B /* RelativeTimeFormatter.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		7BC29F2C7857EFAF4C2922C6 = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +92,9 @@
 				3901D98E237AC538AEEFF155 /* Assets.xcassets */,
 				61CD0DFB9BA20FF504DCD565 /* Info.plist */,
 				E2263AAACE56EC2281742E60 /* App */,
+				3EC12707C866396D6E124F7A /* Utilities */,
+				3D63D135927FAC631E1037DC /* ViewModels */,
+				FE614CACA072BCF4EAC2E725 /* Views */,
 			);
 			path = Handme;
 			sourceTree = "<group>";
@@ -76,6 +114,16 @@
 				8A59949CA3D42D3FD7AE4B6A /* HandmeApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		FE614CACA072BCF4EAC2E725 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5D9EFA69896CB1178750009 /* ContentView.swift */,
+				638EF814DC9082C9642D4F1D /* EmptyStateView.swift */,
+				7A47EF5DEC55910937558B74 /* FileRowView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,7 +220,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				01931FA498FD166F2DE2C641 /* AppDelegate.swift in Sources */,
+				4CFC3E373E48AE8E5A0C3C31 /* CLIInstaller.swift in Sources */,
+				DB5CD522CE6FBAFE4F1EB8A5 /* ContentView.swift in Sources */,
+				8569ACB1A9C216E3DF31EF10 /* EmptyStateView.swift in Sources */,
+				24A6C66A27AEDBA192AE29B7 /* FileOperations.swift in Sources */,
+				9DFA9BA25BD1DB20FE4AEFD4 /* FileRowView.swift in Sources */,
 				C560BC2A10881D20CE9D0065 /* HandmeApp.swift in Sources */,
+				6990B286F957A7EE778B8104 /* InboxViewModel.swift in Sources */,
+				94138FD17EFEA9B7C0C10CBE /* PathFormatter.swift in Sources */,
+				56CFB90B0A020247C99B9ECD /* RelativeTimeFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

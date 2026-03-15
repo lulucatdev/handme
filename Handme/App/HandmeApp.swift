@@ -11,10 +11,28 @@ struct HandmeApp: App {
 
     var body: some Scene {
         Window("Handme", id: "main") {
-            Text("Handme — Loading...")
-                .frame(minWidth: 320, minHeight: 400)
+            ContentView()
         }
         .defaultSize(width: 480, height: 600)
+        .commands {
+            CommandGroup(after: .pasteboard) {
+                Button("复制路径") {
+                    NotificationCenter.default.post(name: .handmeCopyPaths, object: nil)
+                }
+                .keyboardShortcut("c", modifiers: [.command, .shift])
+            }
+            CommandGroup(after: .toolbar) {
+                Button("在 Finder 中显示") {
+                    NotificationCenter.default.post(name: .handmeRevealInFinder, object: nil)
+                }
+                .keyboardShortcut("r", modifiers: [.command, .shift])
+
+                Button("QuickLook") {
+                    NotificationCenter.default.post(name: .handmeQuickLook, object: nil)
+                }
+                .keyboardShortcut(" ", modifiers: [])
+            }
+        }
 
         Settings {
             Text("Settings placeholder")
